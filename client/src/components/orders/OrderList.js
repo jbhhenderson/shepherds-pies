@@ -4,22 +4,22 @@ import { Button, Table } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
 export default function OrderList() {
-    const [orders, setOrders] = useState([])
-    const navigate = useNavigate()
+    const [orders, setOrders] = useState([]);
+    const navigate = useNavigate();
 
     const getAllOrders = () => {
-        getOrders().then(setOrders)
-    }
+        getOrders().then(setOrders);
+    };
 
     const handleDetailsButton = (e, orderId) => {
-        e.preventDefault()
+        e.preventDefault();
 
-        navigate(`/orders/${orderId}`)
-    }
+        navigate(`/orders/${orderId}`);
+    };
 
     useEffect(() => {
-        getAllOrders()
-    }, [])
+        getAllOrders();
+    }, []);
 
     return (
         <>
@@ -52,5 +52,5 @@ export default function OrderList() {
             </tbody>
         </Table>
         </>
-    )
-}
+    );
+};
