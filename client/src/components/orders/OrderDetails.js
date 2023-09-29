@@ -1,19 +1,26 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getOrder } from "../../managers/orderManager";
-import { ListGroup, ListGroupItem, Table } from "reactstrap";
+import { Button, ListGroup, ListGroupItem, Table } from "reactstrap";
 
 export default function OrderDetails() {
     const { id } = useParams();
-    const [order, setOrder] = useState({})
+    const [order, setOrder] = useState({});
+    const navigate = useNavigate();
 
     const getThisOrder = () => {
-        getOrder(parseInt(id)).then(setOrder)
-    }
+        getOrder(parseInt(id)).then(setOrder);
+    };
+
+    const handleDetailsButton = (e, pizzaId) => {
+        e.preventDefault();
+
+        navigate(`/pizzas/${pizzaId}`);
+    };
 
     useEffect(() => {
-        getThisOrder()
-    }, [])
+        getThisOrder();
+    }, []);
 
     return (
         <>
@@ -23,7 +30,7 @@ export default function OrderDetails() {
                 Order Placed On: {order.orderDate}
             </ListGroupItem>
             <ListGroupItem>
-                Reciever: {order.receiver?.firstName} {order.receiver?.lastName}
+                Receiver: {order.receiver?.firstName} {order.receiver?.lastName}
             </ListGroupItem>
             {order.deliverer 
             ? <> 
@@ -60,6 +67,7 @@ export default function OrderDetails() {
                     <th>Sauce</th>
                     <th># Of Toppings</th>
                     <th>Price</th>
+                    <th>Details</th>
                 </tr>
             </thead>
             <tbody>
@@ -71,11 +79,19 @@ export default function OrderDetails() {
                             <td>{p.sauce.name}</td>
                             <td>{p.pizzaToppings.length}</td>
                             <td>${p.pizzaCost}</td>
+                            <td>
+                                <Button 
+                                color="primary"
+                                onClick={(e) => handleDetailsButton(e, p.id)}
+                                >
+                                Details
+                                </Button>
+                            </td>
                         </tr>
                     ))
                 }
             </tbody>
         </Table>
         </>
-    )
-}
+    );
+};

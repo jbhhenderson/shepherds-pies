@@ -5,6 +5,7 @@ import Register from "./auth/Register";
 import Home from "./Home";
 import OrderList from "./orders/OrderList";
 import OrderDetails from "./orders/OrderDetails";
+import PizzaDetails from "./pizzas/PizzaDetails";
 
 export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
   return (
@@ -34,6 +35,16 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
                 <OrderDetails />
               </AuthorizedRoute>
             }
+          />
+        </Route>
+        <Route path="pizzas">
+          <Route
+          path=":id"
+          element={
+            <AuthorizedRoute loggedInUser={loggedInUser}>
+              <PizzaDetails />
+            </AuthorizedRoute>
+          }
           />
         </Route>
         <Route
