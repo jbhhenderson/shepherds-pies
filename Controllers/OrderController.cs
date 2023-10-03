@@ -93,4 +93,20 @@ public class OrderController : ControllerBase
         return Ok();
     }
 
+    [HttpDelete("{id}")]
+    [Authorize]
+    public IActionResult DeleteOrder(int id)
+    {
+        Order orderToDelete = _dbContext.Orders.SingleOrDefault(c => c.Id == id);
+
+        if (orderToDelete == null)
+        {
+            return NotFound();
+        }
+
+        _dbContext.Remove(orderToDelete);
+        _dbContext.SaveChanges();
+
+        return NoContent();
+    }
 }
