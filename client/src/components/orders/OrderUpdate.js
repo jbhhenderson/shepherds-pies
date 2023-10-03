@@ -68,6 +68,12 @@ export default function OrderUpdate() {
             .then(() => navigate(`/orders/${id}`))
     };
 
+    const handleEditPizza = (e, pizzaId) => {
+        e.preventDefault()
+
+        navigate(`/orders/${id}/new-pizza/${pizzaId}`)
+    }
+
     useEffect(() => {
         getThisOrder();
         getUserProfiles().then(setUsers);
@@ -163,10 +169,16 @@ export default function OrderUpdate() {
                             <td>${p.pizzaCost}</td>
                             <td>
                                 <Button 
-                                color="primary"
+                                color="info"
                                 onClick={(e) => handleDetailsButton(e, p.id)}
                                 >
                                 Details
+                                </Button>
+                                <Button 
+                                color="primary"
+                                onClick={(e) => handleEditPizza(e, p.id)}
+                                >
+                                Edit
                                 </Button>
                                 <Button 
                                 color="danger"
