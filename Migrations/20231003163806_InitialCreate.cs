@@ -263,9 +263,9 @@ namespace ShepherdsPies.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    CheeseId = table.Column<int>(type: "integer", nullable: false),
-                    SauceId = table.Column<int>(type: "integer", nullable: false),
-                    SizeId = table.Column<int>(type: "integer", nullable: false),
+                    CheeseId = table.Column<int>(type: "integer", nullable: true),
+                    SauceId = table.Column<int>(type: "integer", nullable: true),
+                    SizeId = table.Column<int>(type: "integer", nullable: true),
                     OrderId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
@@ -275,8 +275,7 @@ namespace ShepherdsPies.Migrations
                         name: "FK_Pizzas_Cheeses_CheeseId",
                         column: x => x.CheeseId,
                         principalTable: "Cheeses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Pizzas_Orders_OrderId",
                         column: x => x.OrderId,
@@ -287,14 +286,12 @@ namespace ShepherdsPies.Migrations
                         name: "FK_Pizzas_Sauces_SauceId",
                         column: x => x.SauceId,
                         principalTable: "Sauces",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Pizzas_Sizes_SizeId",
                         column: x => x.SizeId,
                         principalTable: "Sizes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -326,19 +323,19 @@ namespace ShepherdsPies.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "1500bc5e-3a25-4732-bf2a-baeafa9b37c1", "Admin", "admin" });
+                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "28cd92ae-d328-4266-bdbd-634a53e08f77", "Admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "b9c5a948-d9fe-4303-bdc8-2a67e248f537", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEAcbT7jEMvNTppT03hbMq9UiCTiY8Xmga9JDr+HJ9wcMYE4xohM8bMlJ6vJsvL1ZOw==", null, false, "2b7e8306-7b1d-43b6-a34d-2c0a9bd49d53", false, "Administrator" },
-                    { "dbc40bc6-1112-4ac5-a3ed-180f5e916a5f", 0, "7996088c-220a-4860-b95b-79f4329530f8", "braxton@smith.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEL9puW77OryZuinoIR1dN/ByTTznbLXf+HO3Hamge0foAx4gDLEVZBB99PMX7hzvuA==", null, false, "76c0156c-0f31-4dbc-aed8-506dff7f9834", false, "braxton" },
-                    { "dbc40bc6-1234-4ac5-a3ed-180f5e916a5f", 0, "14a6c530-1211-463e-aae8-9f8784df0916", "jackson@henderson.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEJADvYb1jSLv4Hsv6eNYuKwhVcxi5crAFAw2ywRLI2eb73aQIBxLr5aBT8tI3K7Lpw==", null, false, "16ac08e6-e15a-4f0f-b831-2cee3245c343", false, "jackson" },
-                    { "dbc40bc6-1314-4ac5-a3ed-180f5e916a5f", 0, "7363cab6-80d2-46b5-8024-baeaa82901e2", "baker@wright.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEKcQc3qO4TNeaz8KWqEc5MholoWN74YDYMKXLQzBPllxE1DkGaM/TXF5oxn/l2WAQQ==", null, false, "88776e8f-b401-4c8a-b7de-8cc5c59b6e95", false, "baker" },
-                    { "dbc40bc6-4567-4ac5-a3ed-180f5e916a5f", 0, "7f73cde0-6ff6-4b53-9d4f-404cb8d4b5b4", "sam@ward.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEMlwGc+XDK5NEzVEj19YdUqt4yObXP+N7Sh87GlsyMzOhmOrt4bk3wccVXkz3ODLmg==", null, false, "06117f0b-adee-45b3-b0b8-4dcfbfdae13c", false, "sam" },
-                    { "dbc40bc6-8910-4ac5-a3ed-180f5e916a5f", 0, "ea988afd-6cb3-4002-a482-dd27797bd898", "will@ward.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEC85Bnf6+kwmwBh35ZaHc3TrDKfZOwnOrrQiQ7azK40jZD5F2ZwkI4I91FQoA0Z03A==", null, false, "aab4388a-2561-4193-9a8d-db0836a54eaa", false, "will" }
+                    { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "a0135738-d7d4-4160-92be-860f156301c0", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEMvoo4Nux4RkOCiaPYCUhdn1LQoBnBjH0vIC5dhSPVJHVoGcxAd9VCvxfmqk7fWpoQ==", null, false, "4f38152e-be6e-412b-813c-e5663a0d2192", false, "Administrator" },
+                    { "dbc40bc6-1112-4ac5-a3ed-180f5e916a5f", 0, "1347b99b-62f6-40e7-8cd9-43d097a844a7", "braxton@smith.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEPTcrGWgs8W6nKhFN5Jnr1GrVsu31LHHCzWUo2co6dwcrQCoW5gYddGk4kQIqlmFRA==", null, false, "1c96dee0-eef4-461e-9fe0-40c51ad4f120", false, "braxton" },
+                    { "dbc40bc6-1234-4ac5-a3ed-180f5e916a5f", 0, "6bc32e2d-c0e5-45c2-9a4c-605f7bb1c497", "jackson@henderson.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEKaN4jRlLZ1U6lVdK1KZVhypJRiGltNo1nyrwgM16BPMdb44ioVKXr9V6VU8ZFk1KQ==", null, false, "a678cbc1-75c7-4401-bd27-d3d633412aef", false, "jackson" },
+                    { "dbc40bc6-1314-4ac5-a3ed-180f5e916a5f", 0, "8b3ee460-ed9f-4381-94b3-47033925ee41", "baker@wright.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEEj590ebWrvHeoXl4/f8t9gdLcXcscidXbci7n2rvft2ce/HMjWTsXgCluMsV2B6NA==", null, false, "42728ec8-b56f-40ca-a7dd-9613f4022101", false, "baker" },
+                    { "dbc40bc6-4567-4ac5-a3ed-180f5e916a5f", 0, "578f3b44-38eb-4cb3-a377-c1efa47962fd", "sam@ward.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEPPSxixN1gKccRZG3y+JR27xMjavlmffkTEW1fw9qURYTSPJpZUniXkxDbH8xO2uVw==", null, false, "6fb39ce7-9604-41c3-9265-77c29703a345", false, "sam" },
+                    { "dbc40bc6-8910-4ac5-a3ed-180f5e916a5f", 0, "829b8f92-d901-41df-aa09-d782a1413128", "will@ward.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEARjVLM5UFQQJO5VvoM6g66yUfA12N0BieASBoih+2TweEuFRL9QFVMjR2bOY07PjA==", null, false, "0e281e1e-de86-4c5f-9a26-51a5130a37c3", false, "will" }
                 });
 
             migrationBuilder.InsertData(
