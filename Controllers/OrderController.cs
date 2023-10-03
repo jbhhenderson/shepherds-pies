@@ -83,13 +83,15 @@ public class OrderController : ControllerBase
         {
             return NotFound();
         }
-        if (order.DelivererId == 0)
+        if (order.DelivererId != 0)
+        {
+            foundOrder.TableId = 0;
+            foundOrder.DelivererId = order.DelivererId;
+        }
+        if (order.TableId != 0)
         {
             foundOrder.TableId = order.TableId;
-        }
-        if (order.TableId == 0)
-        {
-            foundOrder.DelivererId = order.DelivererId;
+            foundOrder.DelivererId = 0;
         }
         
         foundOrder.TipAmount = order.TipAmount;
