@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { Form, useNavigate, useParams } from "react-router-dom"
-import { getUserProfiles } from "../../managers/userProfileManager";
-import { Button, FormGroup, Input, Label } from "reactstrap";
+import { useNavigate, useParams } from "react-router-dom"
+import { Button, Input } from "reactstrap";
 import { getPizza, updatePizza } from "../../managers/pizzaManager";
 import { getCheeses } from "../../managers/cheeseManager";
 import { getSauces } from "../../managers/sauceManager";
@@ -39,9 +38,9 @@ export default function PizzaForm() {
         e.preventDefault()
 
         const newPizza = {
-            cheeseId: cheeseId,
-            sauceId: sauceId,
-            sizeId: sizeId
+            cheeseId: cheeseId ? cheeseId : pizza.cheeseId,
+            sauceId: sauceId ? sauceId : pizza.sauceId,
+            sizeId: sizeId ? sizeId : pizza.sizeId
         }
 
         updatePizza(pizza.id, newPizza)
@@ -58,8 +57,7 @@ export default function PizzaForm() {
 
     return (
     <>
-        <h2>New Pizza</h2>
-        <p>Form for pizza {pizzaId} on order {orderId} works</p>
+        <h2>Create Pizza</h2>
         <p>Select your size:</p>
         <Input
             type="select"
