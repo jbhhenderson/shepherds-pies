@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getOrder } from "../../managers/orderManager";
 import { Button, ListGroup, ListGroupItem, Table } from "reactstrap";
-import { createPizza } from "../../managers/pizzaManager";
+import { createPizza, deletePizza } from "../../managers/pizzaManager";
 
 export default function OrderUpdate() {
     const { id } = useParams();
@@ -28,6 +28,13 @@ export default function OrderUpdate() {
 
         createPizza(newPizza)
             .then((res) => navigate(`/orders/${id}/new-pizza/${res.id}`))
+    }
+
+    const handleDeletePizza = (e, pizzaId) => {
+        e.preventDefault()
+
+        deletePizza(pizzaId)
+            .then(() => getThisOrder())
     }
 
     useEffect(() => {
@@ -100,6 +107,12 @@ export default function OrderUpdate() {
                                 onClick={(e) => handleDetailsButton(e, p.id)}
                                 >
                                 Details
+                                </Button>
+                                <Button 
+                                color="danger"
+                                onClick={(e) => handleDeletePizza(e, p.id)}
+                                >
+                                Remove Pizza
                                 </Button>
                             </td>
                         </tr>

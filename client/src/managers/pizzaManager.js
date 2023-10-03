@@ -22,4 +22,10 @@ export const updatePizza = (pizzaId, pizza) => {
       },
       body: JSON.stringify(pizza)
     })
+}
+
+export const deletePizza = (id) => {
+    return fetch(`${_apiUrl}/${id}`, {
+        method: "DELETE"
+    })
   }
