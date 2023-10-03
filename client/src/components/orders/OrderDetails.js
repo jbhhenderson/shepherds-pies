@@ -46,7 +46,7 @@ export default function OrderDetails() {
                     Delivery Status: Dine In
                 </ListGroupItem> 
                 <ListGroupItem>
-                    Table:  `${order.tableId}`
+                    Table:  {order.tableId}
                 </ListGroupItem>
             </>
             }
