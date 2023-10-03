@@ -10,7 +10,7 @@ public class Order
     public UserProfile Receiver { get; set; }
     public int? DelivererId { get; set; }
     [ForeignKey("DelivererId")]
-    public UserProfile Deliverer { get; set; }
+    public UserProfile? Deliverer { get; set; }
     public double TipAmount { get; set; }
     public DateTime OrderDate { get; set; }
     public List<Pizza> OrderPizzas { get; set; }
