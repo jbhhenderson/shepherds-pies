@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { createOrder, getOrders } from "../../managers/orderManager";
+import { createOrder, deleteOrder, getOrders } from "../../managers/orderManager";
 import { Button, Table } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
@@ -26,6 +26,13 @@ export default function OrderList({ loggedInUser }) {
 
         createOrder(newOrder)
             .then((res) => navigate(`/orders/create/${res.id}`))
+    }
+
+    const handleDeleteButton = (e, orderId) => {
+        e.preventDefault()
+
+        deleteOrder(orderId)
+            .then(() => getAllOrders())
     }
 
     useEffect(() => {
@@ -62,6 +69,12 @@ export default function OrderList({ loggedInUser }) {
                             onClick={(e) => handleDetailsButton(e, o.id)}
                             >
                             Details
+                            </Button>
+                            <Button 
+                            color="danger"
+                            onClick={(e) => handleDeleteButton(e, o.id)}
+                            >
+                            Cancel Order
                             </Button>
                         </td>
                     </tr>
