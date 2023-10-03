@@ -62,4 +62,35 @@ public class OrderController : ControllerBase
 
         return Ok(order);
     }
+    
+    [HttpPost]
+    [Authorize]
+    public IActionResult Create(Order order)
+    {
+        order.OrderDate = DateTime.Now;
+        _dbContext.Orders.Add(order);
+        _dbContext.SaveChanges();
+        return Created($"/api/order/{order.Id}", order);
+    }
+
+    [HttpPut("{id}")]
+    [Authorize]
+    public IActionResult Update(int id, Order order)
+    {
+        Order foundOrder = _dbContext.Orders.SingleOrDefault(o => o.Id == id);
+
+        if (foundOrder == null)
+        {
+            return NotFound();
+        }
+
+        foundOrder.DelivererId = order.DelivererId;
+        foundOrder.TableId = order.TableId;
+        foundOrder.TipAmount = order.TipAmount;
+
+        _dbContext.SaveChanges();
+
+        return Ok();
+    }
+
 }

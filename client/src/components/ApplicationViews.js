@@ -6,6 +6,7 @@ import Home from "./Home";
 import OrderList from "./orders/OrderList";
 import OrderDetails from "./orders/OrderDetails";
 import PizzaDetails from "./pizzas/PizzaDetails";
+import OrderForm from "./orders/OrderForm";
 
 export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
   return (
@@ -24,7 +25,7 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
             index
             element={
               <AuthorizedRoute loggedInUser={loggedInUser}>
-                <OrderList />
+                <OrderList loggedInUser={loggedInUser}/>
               </AuthorizedRoute>
             }
           />
@@ -33,6 +34,14 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
             element={
               <AuthorizedRoute loggedInUser={loggedInUser}>
                 <OrderDetails />
+              </AuthorizedRoute>
+            }
+          />
+          <Route
+            path="create/:id"
+            element={
+              <AuthorizedRoute loggedInUser={loggedInUser}>
+                <OrderForm />
               </AuthorizedRoute>
             }
           />

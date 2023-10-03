@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { getOrders } from "../../managers/orderManager";
+import { createOrder, getOrders } from "../../managers/orderManager";
 import { Button, Table } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
-export default function OrderList() {
+export default function OrderList({ loggedInUser }) {
     const [orders, setOrders] = useState([]);
     const navigate = useNavigate();
 
@@ -17,6 +17,17 @@ export default function OrderList() {
         navigate(`/orders/${orderId}`);
     };
 
+    const handleCreateButton = (e) => {
+        e.preventDefault()
+
+        const newOrder = {
+            receiverId: loggedInUser.id
+        }
+
+        createOrder(newOrder)
+            .then((res) => navigate(`/orders/create/${res.id}`))
+    }
+
     useEffect(() => {
         getAllOrders();
     }, []);
@@ -24,6 +35,12 @@ export default function OrderList() {
     return (
         <>
         <h2>Orders</h2>
+        <Button
+            color="primary"
+            onClick={handleCreateButton}
+        >
+            Create New Order
+        </Button>
         <Table>
             <thead>
                 <tr>
