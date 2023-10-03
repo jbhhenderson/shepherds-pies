@@ -35,6 +35,12 @@ export default function OrderList({ loggedInUser }) {
             .then(() => getAllOrders())
     }
 
+    const handleEditButton = (e, orderId) => {
+        e.preventDefault()
+
+        navigate(`/orders/update/${orderId}`)
+    }
+
     useEffect(() => {
         getAllOrders();
     }, []);
@@ -43,7 +49,7 @@ export default function OrderList({ loggedInUser }) {
         <>
         <h2>Orders</h2>
         <Button
-            color="primary"
+            color="success"
             onClick={handleCreateButton}
         >
             Create New Order
@@ -65,10 +71,16 @@ export default function OrderList({ loggedInUser }) {
                         <td>{`$${o.orderCost}`}</td>
                         <td>
                             <Button 
-                            color="primary"
+                            color="info"
                             onClick={(e) => handleDetailsButton(e, o.id)}
                             >
                             Details
+                            </Button>
+                            <Button 
+                            color="primary"
+                            onClick={(e) => handleEditButton(e, o.id)}
+                            >
+                            Edit Order
                             </Button>
                             <Button 
                             color="danger"

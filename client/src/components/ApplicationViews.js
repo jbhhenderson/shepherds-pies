@@ -7,6 +7,8 @@ import OrderList from "./orders/OrderList";
 import OrderDetails from "./orders/OrderDetails";
 import PizzaDetails from "./pizzas/PizzaDetails";
 import OrderForm from "./orders/OrderForm";
+import PizzaForm from "./pizzas/PizzaForm";
+import OrderUpdate from "./orders/OrderUpdate";
 
 export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
   return (
@@ -38,10 +40,26 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
             }
           />
           <Route
+            path=":orderId/new-pizza/:pizzaId"
+            element={
+              <AuthorizedRoute loggedInUser={loggedInUser}>
+                <PizzaForm />
+              </AuthorizedRoute>
+            }
+          />
+          <Route
             path="create/:id"
             element={
               <AuthorizedRoute loggedInUser={loggedInUser}>
                 <OrderForm />
+              </AuthorizedRoute>
+            }
+          />
+          <Route
+            path="update/:id"
+            element={
+              <AuthorizedRoute loggedInUser={loggedInUser}>
+                <OrderUpdate />
               </AuthorizedRoute>
             }
           />

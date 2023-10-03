@@ -12,7 +12,7 @@ using ShepherdsPies.Data;
 namespace ShepherdsPies.Migrations
 {
     [DbContext(typeof(ShepherdsPiesDbContext))]
-    [Migration("20230929152109_InitialCreate")]
+    [Migration("20231003163806_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,7 +53,7 @@ namespace ShepherdsPies.Migrations
                         new
                         {
                             Id = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35",
-                            ConcurrencyStamp = "1500bc5e-3a25-4732-bf2a-baeafa9b37c1",
+                            ConcurrencyStamp = "28cd92ae-d328-4266-bdbd-634a53e08f77",
                             Name = "Admin",
                             NormalizedName = "admin"
                         });
@@ -152,13 +152,13 @@ namespace ShepherdsPies.Migrations
                         {
                             Id = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b9c5a948-d9fe-4303-bdc8-2a67e248f537",
+                            ConcurrencyStamp = "a0135738-d7d4-4160-92be-860f156301c0",
                             Email = "admina@strator.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEAcbT7jEMvNTppT03hbMq9UiCTiY8Xmga9JDr+HJ9wcMYE4xohM8bMlJ6vJsvL1ZOw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMvoo4Nux4RkOCiaPYCUhdn1LQoBnBjH0vIC5dhSPVJHVoGcxAd9VCvxfmqk7fWpoQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2b7e8306-7b1d-43b6-a34d-2c0a9bd49d53",
+                            SecurityStamp = "4f38152e-be6e-412b-813c-e5663a0d2192",
                             TwoFactorEnabled = false,
                             UserName = "Administrator"
                         },
@@ -166,13 +166,13 @@ namespace ShepherdsPies.Migrations
                         {
                             Id = "dbc40bc6-1234-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "14a6c530-1211-463e-aae8-9f8784df0916",
+                            ConcurrencyStamp = "6bc32e2d-c0e5-45c2-9a4c-605f7bb1c497",
                             Email = "jackson@henderson.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEJADvYb1jSLv4Hsv6eNYuKwhVcxi5crAFAw2ywRLI2eb73aQIBxLr5aBT8tI3K7Lpw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKaN4jRlLZ1U6lVdK1KZVhypJRiGltNo1nyrwgM16BPMdb44ioVKXr9V6VU8ZFk1KQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "16ac08e6-e15a-4f0f-b831-2cee3245c343",
+                            SecurityStamp = "a678cbc1-75c7-4401-bd27-d3d633412aef",
                             TwoFactorEnabled = false,
                             UserName = "jackson"
                         },
@@ -180,13 +180,13 @@ namespace ShepherdsPies.Migrations
                         {
                             Id = "dbc40bc6-4567-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7f73cde0-6ff6-4b53-9d4f-404cb8d4b5b4",
+                            ConcurrencyStamp = "578f3b44-38eb-4cb3-a377-c1efa47962fd",
                             Email = "sam@ward.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEMlwGc+XDK5NEzVEj19YdUqt4yObXP+N7Sh87GlsyMzOhmOrt4bk3wccVXkz3ODLmg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPPSxixN1gKccRZG3y+JR27xMjavlmffkTEW1fw9qURYTSPJpZUniXkxDbH8xO2uVw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "06117f0b-adee-45b3-b0b8-4dcfbfdae13c",
+                            SecurityStamp = "6fb39ce7-9604-41c3-9265-77c29703a345",
                             TwoFactorEnabled = false,
                             UserName = "sam"
                         },
@@ -194,13 +194,13 @@ namespace ShepherdsPies.Migrations
                         {
                             Id = "dbc40bc6-8910-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ea988afd-6cb3-4002-a482-dd27797bd898",
+                            ConcurrencyStamp = "829b8f92-d901-41df-aa09-d782a1413128",
                             Email = "will@ward.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEC85Bnf6+kwmwBh35ZaHc3TrDKfZOwnOrrQiQ7azK40jZD5F2ZwkI4I91FQoA0Z03A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEARjVLM5UFQQJO5VvoM6g66yUfA12N0BieASBoih+2TweEuFRL9QFVMjR2bOY07PjA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "aab4388a-2561-4193-9a8d-db0836a54eaa",
+                            SecurityStamp = "0e281e1e-de86-4c5f-9a26-51a5130a37c3",
                             TwoFactorEnabled = false,
                             UserName = "will"
                         },
@@ -208,13 +208,13 @@ namespace ShepherdsPies.Migrations
                         {
                             Id = "dbc40bc6-1112-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7996088c-220a-4860-b95b-79f4329530f8",
+                            ConcurrencyStamp = "1347b99b-62f6-40e7-8cd9-43d097a844a7",
                             Email = "braxton@smith.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEL9puW77OryZuinoIR1dN/ByTTznbLXf+HO3Hamge0foAx4gDLEVZBB99PMX7hzvuA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPTcrGWgs8W6nKhFN5Jnr1GrVsu31LHHCzWUo2co6dwcrQCoW5gYddGk4kQIqlmFRA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "76c0156c-0f31-4dbc-aed8-506dff7f9834",
+                            SecurityStamp = "1c96dee0-eef4-461e-9fe0-40c51ad4f120",
                             TwoFactorEnabled = false,
                             UserName = "braxton"
                         },
@@ -222,13 +222,13 @@ namespace ShepherdsPies.Migrations
                         {
                             Id = "dbc40bc6-1314-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7363cab6-80d2-46b5-8024-baeaa82901e2",
+                            ConcurrencyStamp = "8b3ee460-ed9f-4381-94b3-47033925ee41",
                             Email = "baker@wright.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEKcQc3qO4TNeaz8KWqEc5MholoWN74YDYMKXLQzBPllxE1DkGaM/TXF5oxn/l2WAQQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEj590ebWrvHeoXl4/f8t9gdLcXcscidXbci7n2rvft2ce/HMjWTsXgCluMsV2B6NA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "88776e8f-b401-4c8a-b7de-8cc5c59b6e95",
+                            SecurityStamp = "42728ec8-b56f-40ca-a7dd-9613f4022101",
                             TwoFactorEnabled = false,
                             UserName = "baker"
                         });
@@ -444,16 +444,16 @@ namespace ShepherdsPies.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CheeseId")
+                    b.Property<int?>("CheeseId")
                         .HasColumnType("integer");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("SauceId")
+                    b.Property<int?>("SauceId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("SizeId")
+                    b.Property<int?>("SizeId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
@@ -831,9 +831,7 @@ namespace ShepherdsPies.Migrations
                 {
                     b.HasOne("ShepherdsPies.Models.Cheese", "Cheese")
                         .WithMany()
-                        .HasForeignKey("CheeseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CheeseId");
 
                     b.HasOne("ShepherdsPies.Models.Order", "Order")
                         .WithMany("OrderPizzas")
@@ -843,15 +841,11 @@ namespace ShepherdsPies.Migrations
 
                     b.HasOne("ShepherdsPies.Models.Sauce", "Sauce")
                         .WithMany()
-                        .HasForeignKey("SauceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SauceId");
 
                     b.HasOne("ShepherdsPies.Models.Size", "Size")
                         .WithMany()
-                        .HasForeignKey("SizeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SizeId");
 
                     b.Navigation("Cheese");
 
