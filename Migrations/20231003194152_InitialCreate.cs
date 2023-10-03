@@ -323,19 +323,19 @@ namespace ShepherdsPies.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "28cd92ae-d328-4266-bdbd-634a53e08f77", "Admin", "admin" });
+                values: new object[] { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "90c30ab8-e61e-4dec-a315-557c71d7359c", "Admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "a0135738-d7d4-4160-92be-860f156301c0", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEMvoo4Nux4RkOCiaPYCUhdn1LQoBnBjH0vIC5dhSPVJHVoGcxAd9VCvxfmqk7fWpoQ==", null, false, "4f38152e-be6e-412b-813c-e5663a0d2192", false, "Administrator" },
-                    { "dbc40bc6-1112-4ac5-a3ed-180f5e916a5f", 0, "1347b99b-62f6-40e7-8cd9-43d097a844a7", "braxton@smith.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEPTcrGWgs8W6nKhFN5Jnr1GrVsu31LHHCzWUo2co6dwcrQCoW5gYddGk4kQIqlmFRA==", null, false, "1c96dee0-eef4-461e-9fe0-40c51ad4f120", false, "braxton" },
-                    { "dbc40bc6-1234-4ac5-a3ed-180f5e916a5f", 0, "6bc32e2d-c0e5-45c2-9a4c-605f7bb1c497", "jackson@henderson.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEKaN4jRlLZ1U6lVdK1KZVhypJRiGltNo1nyrwgM16BPMdb44ioVKXr9V6VU8ZFk1KQ==", null, false, "a678cbc1-75c7-4401-bd27-d3d633412aef", false, "jackson" },
-                    { "dbc40bc6-1314-4ac5-a3ed-180f5e916a5f", 0, "8b3ee460-ed9f-4381-94b3-47033925ee41", "baker@wright.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEEj590ebWrvHeoXl4/f8t9gdLcXcscidXbci7n2rvft2ce/HMjWTsXgCluMsV2B6NA==", null, false, "42728ec8-b56f-40ca-a7dd-9613f4022101", false, "baker" },
-                    { "dbc40bc6-4567-4ac5-a3ed-180f5e916a5f", 0, "578f3b44-38eb-4cb3-a377-c1efa47962fd", "sam@ward.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEPPSxixN1gKccRZG3y+JR27xMjavlmffkTEW1fw9qURYTSPJpZUniXkxDbH8xO2uVw==", null, false, "6fb39ce7-9604-41c3-9265-77c29703a345", false, "sam" },
-                    { "dbc40bc6-8910-4ac5-a3ed-180f5e916a5f", 0, "829b8f92-d901-41df-aa09-d782a1413128", "will@ward.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEARjVLM5UFQQJO5VvoM6g66yUfA12N0BieASBoih+2TweEuFRL9QFVMjR2bOY07PjA==", null, false, "0e281e1e-de86-4c5f-9a26-51a5130a37c3", false, "will" }
+                    { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "6f2a25e9-f7e4-49c6-9d35-6083e3472739", "admina@strator.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEFSrRCeJOV1b3Zh6h0TZTokGO1BIkB/dS31P6nF+bxo0N3seliSZYbaGRxJq2auIGw==", null, false, "0a9daee3-0ca3-4f51-b210-536b62a2ce2b", false, "Administrator" },
+                    { "dbc40bc6-1112-4ac5-a3ed-180f5e916a5f", 0, "54a8faa3-ac44-463b-88a0-6ac427c4fbbe", "braxton@smith.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEDbl4KnjAZSOr0UABr6crAK4La3JRVkoy7+S31i/37O5Fk5ngqSA6k0v83qNdqTZwg==", null, false, "062619c9-51d5-474e-a390-dafb18950e8c", false, "braxton" },
+                    { "dbc40bc6-1234-4ac5-a3ed-180f5e916a5f", 0, "3439f4d8-4d22-4c98-9a30-65ded5b6462d", "jackson@henderson.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEAk2mCdIg7NPaVI+Vpu46gcVIjIOhwp2Zz+QjzbdGkCkVnCqYSYb7jdlqVfi35xjCg==", null, false, "788e710c-d715-4956-b4da-934fb763430c", false, "jackson" },
+                    { "dbc40bc6-1314-4ac5-a3ed-180f5e916a5f", 0, "da33120e-7c74-4138-9c87-4854803a749b", "baker@wright.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEO+OdtzTPmCKn9vIVZl58PNoMOOQ8Y6sZ2nEZdSjwERhILj8SMDkcFb2RkBL8eTXbQ==", null, false, "84d525bc-6f90-43db-b78b-0ddcc9ade385", false, "baker" },
+                    { "dbc40bc6-4567-4ac5-a3ed-180f5e916a5f", 0, "4fa2901c-2bc4-4337-ad06-d580cf2811c7", "sam@ward.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEHQ4YhSTVn0GdUymqOyjVHiXXUGiVUxVTCu+nKt0ajnXs44mg1Pnzfue3/Vh1Xl/Xw==", null, false, "f2c52e34-53c4-44b2-a975-600ea45c413d", false, "sam" },
+                    { "dbc40bc6-8910-4ac5-a3ed-180f5e916a5f", 0, "1de49361-b3f7-4630-b1a9-ad7f68cdda7c", "will@ward.comx", false, false, null, null, null, "AQAAAAEAACcQAAAAEKSiBgNUzD4zKgG67IKqTsYnEkQZaUsdzH9CgGDbZxkRTzaHTJlob9fu9c8r6caTpw==", null, false, "62e42408-4451-4510-a57b-28fb95c4a6db", false, "will" }
                 });
 
             migrationBuilder.InsertData(

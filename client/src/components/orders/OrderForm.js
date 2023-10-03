@@ -27,8 +27,8 @@ export default function OrderForm() {
         e.preventDefault()
 
         const orderToSendToAPI = {
-            tableId: tableId ? parseInt(tableId) : 0,
-            delivererId: delivererId ? delivererId : 0,
+            tableId: tableId ? parseInt(tableId) : null,
+            delivererId: delivererId ? delivererId : null,
             tipAmount: tipAmount
         }
 
